@@ -1,5 +1,8 @@
 "use strict";
 
+const morgan = require('morgan')
+ 
+
 // Basic express setup:
 
 const PORT          = 8080;
@@ -9,9 +12,13 @@ const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
+
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
+
+
 
 // The `data-helpers` module provides an interface to the database of tweets.
 // This simple interface layer has a big benefit: we could switch out the
@@ -29,6 +36,18 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
+
+
+app.post("/tweets", (response, request) => {
+  const newTweetText = req.params.tw;
+  console.log("req parasms: ", req.params);
+  console.log("newTweetText", newTweetText)
+
+})
+
+
+// Server Setup!
+
 app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  console.log("Lloyd's Tweeter app listening on port " + PORT);
 });

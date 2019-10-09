@@ -1,0 +1,9 @@
+/* Header CSS */
+
+header.main {
+  height: 400px;
+  background-color: #afeeee;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+  position: relative;
+  text-align: center;
+}

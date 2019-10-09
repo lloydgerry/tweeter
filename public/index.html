@@ -2,31 +2,86 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <title>Lloyd's Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="logo">
+      <span style="font-family:Bungee">tweeter</span>
+    </div>
     </nav>
+
+    <header class="main">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Lloyd</h2>
+        </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+        <section class="tweet-box">
+            <form method="POST", action="/tweets">
+              <textarea id="tweet-text" name="tweet-text" placeholder="What are you humming about?"></textarea>
+              <br>
+              <input id="tweet-button" type="submit" value="Tweet">
+              <span id="counter"><em id="count" default value="maxValue"></em></span>
+            </form>
+            
+          </section>
+        <article class="container">
+        <article class="tweet">
+          <header>
+            <h6>Name of Tweeter</h6> <p>@Handle</p>
+          </header>
+          <body>
+            <p>
+              Give us those sweet tweet bits.
+            </p>
+            <hr style="4px" solid black>
+          </body>
+        
+          <footer> 
+            <sub>Posted 10 days ago.</sub>
+          </footer>
+          
+        </article> 
+      </article> <br><br>
+        <section class="random-text"> 
+        Typewriter try-hard succulents, neutra franzen 8-bit cornhole narwhal thundercats sustainable. Meditation palo santo forage, chillwave vexillologist fam shaman echo park ramps quinoa tote bag. Sartorial glossier readymade etsy health goth everyday carry. Hammock single-origin coffee cred tumeric air plant quinoa fam. Squid four dollar toast fanny pack health goth portland pop-up.
+        <br>
+        Kale chips DIY 3 wolf moon street art viral meditation enamel pin gentrify. Gastropub af shabby chic skateboard beard literally yuccie affogato mustache jianbing viral ramps heirloom yr hella. Taiyaki gluten-free roof party man bun green juice prism meh, cronut knausgaard PBR&B typewriter literally tattooed scenester. Vaporware cloud bread banh mi swag ennui adaptogen sartorial mixtape tousled beard artisan selfies. Lomo readymade vice kogi beard pabst everyday carry affogato pickled chicharrones. Lo-fi shaman health goth chambray ennui crucifix before they sold out street art vice green juice migas franzen. Blue bottle neutra deep v coloring book distillery knausgaard.
+        <br>
+        Oh. You need a little dummy text for your mockup? How quaint.
+        <br>
+        I bet you’re still using Bootstrap too…
+      </section>
     </main>
-
+    <br>
   </body>
 </html>

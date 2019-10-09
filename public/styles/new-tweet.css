@@ -1,0 +1,33 @@
+/* CSS class for new tweets */
+
+
+main section {
+  /* justify-content: flex-center; */
+  background-color: #afeeee;
+  display: box;
+  border-bottom: 3px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  background-color: #afeeee;
+  resize: none;
+  width: 100%;
+  border: none;
+}
+
+#tweet-button {
+  background-color: #555555;
+  border-radius: 8px;
+  border: none;
+  text: white;
+}
+
+#counter {
+  
+}
+
+.over {
+  color: red;
+}
