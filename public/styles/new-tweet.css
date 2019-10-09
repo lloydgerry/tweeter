@@ -2,9 +2,8 @@
 
 
 main section {
-  /* justify-content: flex-center; */
   background-color: #afeeee;
-  display: box;
+  /* display: box; */
   border-bottom: 3px solid black;
   padding: 10px;
   margin-bottom: 10px;
@@ -17,15 +16,17 @@ textarea {
   border: none;
 }
 
+#tweet-button #counter {
+  display: flex;
+  justify-content: space-between;
+}
+
 #tweet-button {
   background-color: #555555;
   border-radius: 8px;
   border: none;
   text: white;
-}
-
-#counter {
-  
+  font-family: bungee;
 }
 
 .over {

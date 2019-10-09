@@ -8,9 +8,9 @@ $(document).ready(function() {
 
   $('#tweet-text')
     .keyup(function() {
+      const maxValue = 140;
       let characters = this.value.length
       let counter = maxValue - characters;
-      const maxValue = 140;
       const count = $('#count')
 
       //update css based on count
