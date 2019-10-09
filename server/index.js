@@ -37,13 +37,12 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 
-
-app.post("/tweets", (response, request) => {
-  const newTweetText = req.params.tw;
-  console.log("req parasms: ", req.params);
-  console.log("newTweetText", newTweetText)
-
-})
+// app.post("/tweets", (request, response) => {
+//   // const newTweetText = response;
+//   // console.log("request parasms: ", request.body);
+//   // console.log("newTweetText", newTweetText)
+//   response.redirect("/")
+// });
 
 
 // Server Setup!
