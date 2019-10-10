@@ -4,8 +4,10 @@
  * Do not modify these two selectors, please
  */
   
+
+
 html {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -18,9 +20,8 @@ html {
 body {
   color: #545149;
   background-color: #afeeee;
-  font-size: 24px;
+  font-size: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
- 
 }
 
 main {
@@ -32,6 +33,11 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.error {
+   display: none;
+ }
+
  article header {
   display: flex;
   justify-content: space-between;
@@ -39,14 +45,35 @@ main {
 
 article.tweet {
   border: 3px solid black;
-  font-size: 14px:
+  font-size: 14px;
   border-radius: 3px;
   margin: 20px;
   padding: 10px;
-  padding-bottom: 10px;ß
+  padding-bottom: 10px;
 }
 
 article.tweet:hover {
   box-shadow: 5px 5px darkcyan;
 }
 
+/* small screen/mobile  */
+@media screen and (max-width: 449px) {
+
+}
+
+
+/* tablet */
+@media screen and (min-width: 450px) and (max-width: 1000px) {
+  main {
+    /* background: royalblue; */
+  }
+}
+
+/* desktop view */
+@media (min-width: 1001px) {
+  main {
+    font-size: 1em;
+    background-color: blue;
+  }
+ 
+}

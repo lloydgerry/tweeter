@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <!-- Meta Information -->
     <title>Lloyd's Tweeter - Home Page</title>
 
@@ -31,6 +32,11 @@
       <div class="logo">
       <span style="font-family:Bungee">tweeter</span>
     </div>
+      <div id="anchor-click">
+          <span>Click below to Tweet</span>
+          <a href="#tweet-form" ><img src="https://img.icons8.com/carbon-copy/50/000000/double-down.png" id="anchor-button"></a> 
+      </div>
+    
     </nav>
 
     <header class="main">
@@ -45,9 +51,15 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div id="error_0" class="error">
+        <span>STOP! It's hammer time! Add some text before you submit.</span>
+      </div>
+      <div id="errorToo" class="error">
+          <span>Hi! It looks like you have too many characters.  Remove some and try again!</span>
+        </div>
         <section class="tweet-box">
             <form id="tweet-form" method="POST">
-              <textarea id="tweet-text" name="tweet-text" type="text" placeholder="What are you humming about?"></textarea>
+              <textarea id="tweet-text" type="text" name="text" placeholder="What are you humming about?"></textarea>
               <br>
               <input id="tweet-button" type="submit" value="Tweet">
               <span id="counter"><em id="count" default value="maxValue"></em></span>
@@ -57,15 +69,6 @@
         <div id="tweets-container">
  
       </div> <br><br>
-        <section class="random-text"> 
-        Typewriter try-hard succulents, neutra franzen 8-bit cornhole narwhal thundercats sustainable. Meditation palo santo forage, chillwave vexillologist fam shaman echo park ramps quinoa tote bag. Sartorial glossier readymade etsy health goth everyday carry. Hammock single-origin coffee cred tumeric air plant quinoa fam. Squid four dollar toast fanny pack health goth portland pop-up.
-        <br>
-        Kale chips DIY 3 wolf moon street art viral meditation enamel pin gentrify. Gastropub af shabby chic skateboard beard literally yuccie affogato mustache jianbing viral ramps heirloom yr hella. Taiyaki gluten-free roof party man bun green juice prism meh, cronut knausgaard PBR&B typewriter literally tattooed scenester. Vaporware cloud bread banh mi swag ennui adaptogen sartorial mixtape tousled beard artisan selfies. Lomo readymade vice kogi beard pabst everyday carry affogato pickled chicharrones. Lo-fi shaman health goth chambray ennui crucifix before they sold out street art vice green juice migas franzen. Blue bottle neutra deep v coloring book distillery knausgaard.
-        <br>
-        Oh. You need a little dummy text for your mockup? How quaint.
-        <br>
-        I bet you’re still using Bootstrap too…
-      </section>
     </main>
     <br>
   </body>
