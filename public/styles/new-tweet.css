@@ -2,7 +2,7 @@
 
 
 section {
-  background-color: #afeeee;
+  /* background-color: #afeeee; */
   /* display: box; */
   border-bottom: 3px solid black;
   padding: 10px;
@@ -10,28 +10,29 @@ section {
 }
 
 textarea {
-  background-color: #afeeee;
   resize: none;
   width: 100%;
   border: none;
+  background-color: #afeeee;
 }
 
-#tweet-button #counter {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 #tweet-button {
   background-color: #555555;
   color: white;
   border-radius: 8px;
   border: none;
-  text: white;
   font-family: bungee;
 }
 
 #tweet-button:hover {
   transform: translateY(2px);
+}
+
+#lower-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .over {

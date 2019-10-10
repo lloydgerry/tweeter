@@ -20,8 +20,8 @@ html {
 body {
   color: #545149;
   background-color: #afeeee;
-  font-size: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  min-width: 300px;
 }
 
 main {
@@ -36,6 +36,8 @@ main {
 
 .error {
    display: none;
+   color: red;
+   font-family: bungee;
  }
 
  article header {
@@ -45,7 +47,6 @@ main {
 
 article.tweet {
   border: 3px solid black;
-  font-size: 14px;
   border-radius: 3px;
   margin: 20px;
   padding: 10px;
@@ -58,22 +59,27 @@ article.tweet:hover {
 
 /* small screen/mobile  */
 @media screen and (max-width: 449px) {
-
+  main {
+    background-color: lightslategray;
+    font-size: 10px;
+  }
 }
 
 
 /* tablet */
 @media screen and (min-width: 450px) and (max-width: 1000px) {
   main {
-    /* background: royalblue; */
+    font-size: 20px;
   }
 }
 
 /* desktop view */
 @media (min-width: 1001px) {
   main {
-    font-size: 1em;
+    font-size: 24px;
     background-color: blue;
   }
- 
+  #tweet-box {
+
+  }
 }

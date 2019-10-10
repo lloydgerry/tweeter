@@ -5,12 +5,13 @@ nav {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  height: 2.5em;
+  height: 75px;
   background-color: FFFFF;
   color: FFFFF;
   margin: 1em;
   z-index: 2;
   width: auto;
+  font-size: 22px;
 }
 
 #anchor-click {

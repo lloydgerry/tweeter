@@ -5,8 +5,10 @@
  */
 
 /* TODO
-* Character counter
 * Place cursor in field when clicking anchor link
+* Tweet icons
+* Date helper function
+* Responsive font size (em)
 */
 
 const escape =  function(str) {
@@ -86,8 +88,9 @@ $('#tweet-form').submit(function(event) {
       url: "/tweets",
       data: newTweetObject,
     })
-    .then(() => $loadTweets())
+    .then(() => $loadTweets() )
     .then(() => $('#tweet-form').trigger("reset") )
+    .then(() => $('#count').text(140) )
   }
 });
 
