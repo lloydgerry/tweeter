@@ -45,22 +45,40 @@ main {
   justify-content: space-between;
 }
 
+article footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 article.tweet {
   border: 3px solid black;
   border-radius: 3px;
   margin: 20px;
   padding: 10px;
   padding-bottom: 10px;
+  word-wrap: break-word;
+  opacity: .5;
 }
 
 article.tweet:hover {
   box-shadow: 5px 5px darkcyan;
+  opacity: 1;
 }
+
+article.tweet:hover #tweet-footer-icons {
+  display: block;
+}
+
+#tweet-footer-icons {
+  display: none;
+  transition: all ease 0.8s;
+}
+
+
 
 /* small screen/mobile  */
 @media screen and (max-width: 449px) {
   main {
-    background-color: lightslategray;
     font-size: 10px;
   }
 }
@@ -77,7 +95,6 @@ article.tweet:hover {
 @media (min-width: 1001px) {
   main {
     font-size: 24px;
-    background-color: blue;
   }
   #tweet-box {
 

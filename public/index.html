@@ -18,6 +18,8 @@
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/moment"></script>
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -34,7 +36,7 @@
     </div>
       <div id="anchor-click">
           <span>Click below to Tweet</span>
-          <a href="#tweet-form" ><img src="https://img.icons8.com/carbon-copy/50/000000/double-down.png" id="anchor-button"></a> 
+          <a id="anchor-click-button" ><img src="https://img.icons8.com/carbon-copy/50/000000/double-down.png" id="anchor-button"></a> 
       </div>
     
     </nav>
@@ -58,16 +60,16 @@
           <span>Hi! It looks like you have too many characters.  Remove some and try again!</span>
         </div>
         <section class="tweet-box">
-            <form id="tweet-form" method="POST">
-              <textarea id="tweet-text" type="text" name="text" placeholder="What are you chirping about?"></textarea>
+          <form id="tweet-form" method="POST">
+            <textarea id="tweet-text" type="text" name="text" placeholder="What are you chirping about?"></textarea>
               <div id="lower-box">
               <input id="tweet-button" type="submit" value="Tweet">
               <span id="counter"><em id="count" default value="maxValue"></em></span>
             </div>
-            </form>
-          </section>
+          </form>
+        </section>
         <div id="tweets-container">
- 
+
       </div> <br><br>
     </main>
     <br>

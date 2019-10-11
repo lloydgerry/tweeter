@@ -1,3 +1,4 @@
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -7,7 +8,7 @@
 /* TODO
 * Place cursor in field when clicking anchor link
 * Tweet icons
-* Date helper function
+* Date helper function - refine to specific days/hour/mins ago
 * Responsive font size (em)
 */
 
@@ -31,6 +32,7 @@ $(document).ready(function() {
     const userHandle = tweetObject['user'].handle;
     const tweetText = escape(tweetObject['content'].text);
     const createdId = tweetObject['created_at'];
+    const convertedDate = moment(createdId).format("LL");
 
     const $tweet = $('<article>').addClass("tweet");
 
@@ -45,7 +47,7 @@ $(document).ready(function() {
           <hr style="4px" solid black></hr>
       </body>
       <footer> 
-        <sub>Posted ${createdId} day(s) ago.</sub>
+        <span> <sub>Posted ${convertedDate}.</sub> </span> <span id="tweet-footer-icons"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAAvElEQVQ4jWNkgILjzs7/GRgYGJhZWS///fWr2nLfvs0MRAAmZI6Bjw+DrK6uLhsn5/LTHh4Xjzs5+RIygBHZBQY+PnCJD8+eMTy7du3rv79/7/759asGl4twGoBu0N8/f+78/f27Ft0gggagGHT9+re/v3/f/vv3b4nlnj17GBjQwoAcwEJIAS6bCRpASCNOA4jVCAMogcjAwMDAxMx88d+/fwQ1YrhgvhkkBma1FxoQoxEGKI6FYWAAxQAAYQyDuLyhvDcAAAAASUVORK5CYII="> <img src="https://img.icons8.com/carbon-copy/16/000000/refresh.png">  <img src="https://img.icons8.com/cotton/20/000000/facebook-like--v1.png"> </span>
       </footer> `
     $($tweet).append(markup)
     return $tweet;
@@ -92,7 +94,17 @@ $('#tweet-form').submit(function(event) {
     .then(() => $('#tweet-form').trigger("reset") )
     .then(() => $('#count').text(140) )
   }
-});
+  });
+
+  //Show tweet-box on click
+  $('#anchor-click-button').click( function() {
+    event.preventDefault()
+    $('section')
+      .slideToggle()
+      .promise()
+      .done(function() {$('textarea').focus()});
+ 
+  });
 
 });
 
