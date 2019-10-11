@@ -20,3 +20,8 @@ This project also contains @media changes to make the site more responsive to di
 -  express: "^4.13.4",
 -  md5: "^2.1.0"
 
+##Images
+
+![Screenshot upon landing](https://github.com/lloydgerry/tweeter/blob/master/docs/Tweet!.png)
+![Screenshot of tweeting](https://github.com/lloydgerry/tweeter/blob/master/docs/Tweeter%20-%20Folded.png)
+
