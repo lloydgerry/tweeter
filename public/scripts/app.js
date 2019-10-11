@@ -5,24 +5,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-/* TODO
-* Place cursor in field when clicking anchor link
-* Tweet icons
-* Date helper function - refine to specific days/hour/mins ago
-* Responsive font size (em)
-*/
-
+//sercurity check on form to prevent malicous entries
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
-// const correctDate = function() {
-
-// }
-
-
+//load this when page ready
 $(document).ready(function() {
 
 
@@ -48,61 +38,64 @@ $(document).ready(function() {
       </body>
       <footer> 
         <span> <sub>Posted ${convertedDate}.</sub> </span> <span id="tweet-footer-icons"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAAvElEQVQ4jWNkgILjzs7/GRgYGJhZWS///fWr2nLfvs0MRAAmZI6Bjw+DrK6uLhsn5/LTHh4Xjzs5+RIygBHZBQY+PnCJD8+eMTy7du3rv79/7/759asGl4twGoBu0N8/f+78/f27Ft0gggagGHT9+re/v3/f/vv3b4nlnj17GBjQwoAcwEJIAS6bCRpASCNOA4jVCAMogcjAwMDAxMx88d+/fwQ1YrhgvhkkBma1FxoQoxEGKI6FYWAAxQAAYQyDuLyhvDcAAAAASUVORK5CYII="> <img src="https://img.icons8.com/carbon-copy/16/000000/refresh.png">  <img src="https://img.icons8.com/cotton/20/000000/facebook-like--v1.png"> </span>
-      </footer> `
-    $($tweet).append(markup)
+      </footer> `;
+    $($tweet).append(markup);
     return $tweet;
-  }
+  };
 
   const renderTweets = function(tweets) {
-  for(let tweet of tweets) {
-    $('#tweets-container').prepend(createTweetElement(tweet));
+    for (let tweet of tweets) {
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
-  }
+  };
 
   const $loadTweets = function() {
     $.getJSON('/tweets', function(json) {
       return renderTweets(json);
-    })
+    });
   };
   $loadTweets();
 
-// Submit from New Tweet Form
-$('#tweet-form').submit(function(event) {
-  event.preventDefault();
-  $('#error_0').slideUp();
-  $('#errorToo').slideUp();
+  // Submit from New Tweet Form
+  $('#tweet-form').submit(function(event) {
+    event.preventDefault();
+    //reset errors
+    $('#error_0').slideUp();
+    $('#errorToo').slideUp();
 
-  const tweetText = $(this[name="text"]).val();
-  const newTweetObject = $(this).serialize() ;
+    const tweetText = $(this[name = "text"]).val();
+    const newTweetObject = $(this).serialize();
+    //error checks
+    if (tweetText.length === 0) {
 
-  if (tweetText.length === 0) {
+      return $('#error_0').slideDown();
 
-    return $('#error_0').slideDown();
+    } else if (tweetText.length > 140) {
 
-  } else if (tweetText.length > 140) {
+      return $('#errorToo').slideDown();
 
-    return $('#errorToo').slideDown();
-
-  } else {
-
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: newTweetObject,
-    })
-    .then(() => $loadTweets() )
-    .then(() => $('#tweet-form').trigger("reset") )
-    .then(() => $('#count').text(140) )
-  }
+    } else {
+      //run ajax request
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: newTweetObject,
+      })
+        .then(() => $loadTweets()) //reload tweets
+        .then(() => $('#tweet-form').trigger("reset")) // reset form
+        .then(() => $('#count').text(140)); //reset char counter
+    }
   });
 
   //Show tweet-box on click
-  $('#anchor-click-button').click( function() {
-    event.preventDefault()
+  $('#anchor-click-button').click(function() {
+    event.preventDefault();
     $('section')
       .slideToggle()
       .promise()
-      .done(function() {$('textarea').focus()});
+      .done(function() {
+        $('textarea').focus();
+      });
  
   });
 
